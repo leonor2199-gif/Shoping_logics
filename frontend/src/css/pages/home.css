@@ -1,0 +1,341 @@
+/* =========================================
+   HOME PAGE BASE (Black & Neon)
+   ========================================= */
+
+.home-page {
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #f3f4f6;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   PROMOTIONAL CAROUSEL
+   ========================================= */
+
+.home-carousel {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 243, 255, 0.25);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 243, 255, 0.1);
+  background: #0b0f19;
+}
+
+.home-carousel__viewport {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.home-carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.home-carousel__slide--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.home-carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-carousel__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 15, 25, 0.2) 0%,
+    rgba(11, 15, 25, 0.85) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.home-carousel__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-carousel__text span {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #00f3ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.home-carousel__text h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Carousel Controls */
+.home-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.home-carousel__arrow:hover {
+  background: #111827;
+  color: #00f3ff;
+  border-color: #00f3ff;
+}
+
+.home-carousel__arrow--prev {
+  left: 10px;
+}
+
+.home-carousel__arrow--next {
+  right: 10px;
+}
+
+.home-carousel__dots {
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.home-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-carousel__dot--active {
+  background: #00f3ff;
+  width: 18px;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0, 243, 255, 0.6);
+}
+
+/* =========================================
+   BALANCE CARD
+   ========================================= */
+
+.balance-card {
+  background: #111827;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.balance-card__current {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.balance-card__label {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.balance-card__amount {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #00f3ff;
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
+}
+
+.balance-card__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.balance-card__button,
+.balance-card__withdraw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.3rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.balance-card__withdraw {
+  background: #1f2937;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.balance-card__withdraw:hover {
+  border-color: #ff007f;
+  color: #ff007f;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+}
+
+/* =========================================
+   VIP LEVEL CARD
+   ========================================= */
+
+.home-vip-card {
+  background: linear-gradient(135deg, #111827 0%, #1a0b2e 100%);
+  border: 1px solid rgba(255, 0, 127, 0.3);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.1);
+}
+
+.home-vip-card div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-vip-card span {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  font-weight: 600;
+}
+
+.home-vip-card strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ff007f;
+  background: rgba(255, 0, 127, 0.12);
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 0, 127, 0.3);
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+}
+
+/* =========================================
+   QUICK ACTIONS
+   ========================================= */
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-heading h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+}
+
+.section-heading p {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.quick-actions__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.quick-action {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.quick-action:hover {
+  border-color: rgba(0, 243, 255, 0.4);
+  background: #131c2e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.quick-action div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quick-action strong {
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.quick-action span {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  line-height: 1.2;
+}
+
+/* Tablet & Desktop Layouts */
+@media (min-width: 600px) {
+  .home-carousel__viewport {
+    height: 240px;
+  }
+
+  .home-carousel__text h2 {
+    font-size: 1.4rem;
+  }
+
+  .balance-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .balance-card__actions {
+    min-width: 260px;
+  }
+
+  .quick-actions__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

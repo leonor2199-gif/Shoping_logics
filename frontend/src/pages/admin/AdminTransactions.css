@@ -1,0 +1,593 @@
+/* ==========================================================================
+   Admin Transactions Page - Emerald Dark Theme
+   ========================================================================== */
+
+.admin-transactions-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #e2e8f0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header */
+.admin-page-header__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 4px 0;
+}
+
+.admin-page-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.admin-page-header p {
+  margin: 4px 0 0 0;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   Stats Cards
+   ========================================================================== */
+
+.admin-transactions-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.admin-stat-card {
+  background: rgba(6, 78, 59, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-stat-card span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #a7f3d0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-stat-card strong {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Filters Toolbar
+   ========================================================================== */
+
+.admin-transactions-filters {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.admin-transactions-filters form {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.admin-transactions-filters input[type="text"],
+.admin-transactions-filters input[type="date"],
+.admin-transactions-filters select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.admin-transactions-filters input[type="text"] {
+  flex: 1;
+}
+
+.admin-transactions-filters input:focus,
+.admin-transactions-filters select:focus {
+  border-color: #34d399;
+}
+
+.admin-transactions-filters div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-transactions-filters label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.admin-transactions-filters button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-transactions-filters button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.admin-transactions-filters button[type="submit"] {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+
+.admin-transactions-filters button[type="submit"]:hover {
+  background: rgba(16, 185, 129, 0.4);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Table & Badges
+   ========================================================================== */
+
+.admin-table-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-table-loading,
+.admin-table-empty {
+  padding: 48px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.admin-table th {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  color: #94a3b8;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: middle;
+}
+
+.admin-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Type Badges */
+.transaction-type {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.transaction-type--deposit {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.transaction-type--withdrawal {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Status Badges */
+.transaction-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.transaction-status--pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.transaction-status--completed {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.transaction-status--failed {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Amount Styles */
+.transaction-credit {
+  color: #34d399;
+}
+
+.transaction-debit {
+  color: #f87171;
+}
+
+/* Action Buttons */
+.admin-transaction-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-transaction-actions button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-transaction-actions button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.admin-transaction-actions .admin-delete-button {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.admin-transaction-actions .admin-delete-button:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.3);
+  color: #ffffff;
+}
+
+/* Pagination */
+.admin-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.admin-pagination button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.admin-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Modal Backdrop & Containers
+   ========================================================================== */
+
+.admin-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.admin-modal {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh; /* Limits modal height inside screen */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Ensures contents stay within rounded corners */
+}
+
+.admin-transaction-modal {
+  max-width: 650px;
+}
+
+.admin-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0; /* Header stays fixed at top */
+}
+
+.admin-modal__header p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34d399;
+  text-transform: uppercase;
+}
+
+.admin-modal__header h2 {
+  margin: 4px 0 0 0;
+  font-size: 1.25rem;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+.admin-modal__header button {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.admin-modal__header button:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Scrollable Transaction Details View
+   ========================================================================== */
+
+.admin-transaction-details {
+  padding: 24px;
+  overflow-y: auto; /* ENABLES SCROLLING */
+  flex: 1; /* Fills available modal height */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Scrollbar Styling */
+.admin-transaction-details::-webkit-scrollbar {
+  width: 6px;
+}
+
+.admin-transaction-details::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.admin-transaction-details::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.admin-transaction-details::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Sections inside details */
+.admin-transaction-details section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.admin-transaction-details section h3 {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-transaction-details section div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.admin-transaction-details section span {
+  color: #94a3b8;
+}
+
+.admin-transaction-details section strong {
+  color: #ffffff;
+}
+
+.admin-transaction-details section p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* Bank Transfer Information Styling */
+.admin-bank-transfer-section {
+  background: rgba(6, 78, 59, 0.2) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+.admin-bank-transfer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+
+.admin-bank-transfer-header p {
+  font-size: 0.75rem !important;
+  color: #a7f3d0 !important;
+}
+
+.admin-bank-transfer-badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.admin-bank-transfer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-bank-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.admin-bank-detail-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.admin-bank-account-number {
+  font-family: monospace;
+  font-size: 1rem !important;
+  color: #34d399 !important;
+  letter-spacing: 0.05em;
+}
+
+.admin-bank-no-details {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.admin-bank-no-details strong {
+  color: #f87171;
+  display: block;
+}
+
+.admin-bank-no-details p {
+  font-size: 0.8125rem !important;
+  color: #94a3b8 !important;
+}
+
+/* Footer Actions inside Details Modal */
+.admin-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-modal__footer button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  transition: all 0.2s;
+}
+
+.admin-modal__footer button:hover {
+  background: rgba(16, 185, 129, 0.4);
+  color: #ffffff;
+}
+
+.admin-modal__footer .admin-delete-button {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #f87171;
+}
+
+.admin-modal__footer .admin-delete-button:hover {
+  background: rgba(239, 68, 68, 0.35);
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .admin-transactions-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-transactions-filters form {
+    flex-direction: column;
+  }
+
+  .admin-modal {
+    max-height: 95vh;
+  }
+}

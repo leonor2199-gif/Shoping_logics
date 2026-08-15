@@ -1,0 +1,279 @@
+/* =========================================
+   ORDER CONFIRMATION BASE (Black & Neon)
+   ========================================= */
+
+.order-confirmation-page {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #f3f4f6;
+  box-sizing: border-box;
+}
+
+/* Page Header */
+.order-confirmation__header {
+  background: #111827;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8),
+              inset 0 0 10px rgba(0, 243, 255, 0.03);
+}
+
+.order-confirmation__header p {
+  font-size: 0.8rem;
+  color: #ff007f; /* Neon Magenta */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 4px 0;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.6);
+}
+
+.order-confirmation__header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+}
+
+.order-confirmation__header span {
+  font-size: 0.85rem;
+  color: #00f3ff;
+  font-weight: 600;
+}
+
+/* Card Container */
+.order-confirmation-card {
+  background: #111827;
+  border: 1px solid rgba(0, 243, 255, 0.15);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.order-confirmation-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+
+/* Product Info Block */
+.order-confirmation-product {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.order-confirmation-product__icon {
+  font-size: 1.5rem;
+  background: rgba(0, 243, 255, 0.08);
+  border: 1px solid rgba(0, 243, 255, 0.25);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.15);
+}
+
+.order-confirmation-product div {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-confirmation-product span {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.order-confirmation-product strong {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Table Breakdown Rows */
+.order-confirmation-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.order-confirmation-row strong {
+  color: #ffffff;
+}
+
+.order-cashback {
+  color: #10b981 !important; /* Neon Emerald Green */
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+/* Total Amount Display */
+.order-confirmation-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  font-weight: 700;
+}
+
+.order-confirmation-total span {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.order-confirmation-total strong {
+  font-size: 1.25rem;
+  color: #00f3ff;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+/* Actions Section */
+.order-confirm-action {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-confirm-action__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Success Card */
+.order-success {
+  background: #111827;
+  border: 1px solid #10b981;
+  border-radius: 16px;
+  padding: 24px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.order-success__icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+.order-success h2 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.order-success p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.order-success__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Base Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  background: #00f3ff;
+  color: #050b14;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+  border: none;
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.7);
+}
+
+.btn-primary:disabled {
+  background: #1f2937;
+  color: #6b7280;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.btn:not(.btn-primary) {
+  background: transparent;
+  color: #ff007f;
+  border: 1px solid #ff007f;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+}
+
+/* Messages & Loading */
+.order-confirmation-loading,
+.order-confirmation-message {
+  background: #111827;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-confirmation-loading {
+  color: #00f3ff;
+  font-weight: 700;
+}
+
+.order-confirmation-message h2 {
+  color: #ff007f;
+  margin: 0;
+}
+
+.order-confirmation-message p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin: 0;
+}

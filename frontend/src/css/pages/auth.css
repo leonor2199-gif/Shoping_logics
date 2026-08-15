@@ -1,0 +1,390 @@
+/* =========================================
+   AUTHENTICATION MODULE BASE (Glassmorphism & Neon)
+   ========================================= */
+
+/* Main Container Layout */
+.auth-page {
+  background-image: url('https://elceo.com/wp-content/uploads/2025/05/mercado-libre-4.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Logo Image Container (Above Card) */
+.auth-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.auth-logo-image {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  /* Glow filter to complement neon theme */
+  filter: drop-shadow(0 0 12px rgba(0, 243, 255, 0.4));
+}
+
+/* Glassmorphism Card Shell */
+.auth-card {
+  /* Semi-transparent dark background */
+  background: rgba(17, 24, 39, 0.65);
+  
+  /* Backdrop blur creates the frosted glass effect */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  
+  /* Translucent neon border */
+  border: 1px solid rgba(0, 243, 255, 0.25);
+  border-radius: 20px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 420px;
+  
+  /* Soft depth shadow + subtle neon ambient glow */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 
+              0 0 20px 0 rgba(0, 243, 255, 0.15);
+  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Card Header Bindings */
+.auth-header,
+.auth-card__header {
+  text-align: center;
+}
+
+.auth-header h1,
+.auth-card__header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.5px;
+}
+
+.auth-header p,
+.auth-card__header p {
+  font-size: 0.85rem;
+  color: #d1d5db;
+  margin: 0;
+}
+
+/* Form Layout & Form Controls */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #f3f4f6;
+}
+
+/* Semi-transparent Input Styling */
+.form-group input {
+  width: 100%;
+  background: rgba(11, 15, 25, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.form-group input:focus {
+  border-color: #00f3ff;
+  background: rgba(11, 15, 25, 0.75);
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.35);
+}
+
+.form-group input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-group small {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  line-height: 1.3;
+}
+
+/* Inline Error Message Banner */
+.error-message {
+  color: #ff4d6d;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 14px;
+  background: rgba(255, 0, 127, 0.12);
+  border: 1px solid rgba(255, 0, 127, 0.35);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.15);
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   REGISTER-SPECIFIC BINDINGS
+   ========================================= */
+
+/* Broader Container for Registration Form */
+.auth-card--register {
+  max-width: 480px;
+}
+
+/* Indicator Badges */
+.required {
+  color: #ff007f;
+}
+
+.optional {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+/* Section Divider */
+.form-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0 2px 0;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.form-divider span {
+  padding: 0 12px;
+  color: #ff007f;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Password Strength Bar */
+.password-strength {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.password-strength__label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.password-strength__label strong {
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.password-strength__bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(11, 15, 25, 0.6);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.password-strength__fill {
+  display: block;
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.password-strength__fill--weak {
+  width: 33%;
+  background-color: #ff007f;
+  box-shadow: 0 0 8px rgba(255, 0, 127, 0.5);
+}
+
+.password-strength__fill--medium {
+  width: 66%;
+  background-color: #ffb800;
+  box-shadow: 0 0 8px rgba(255, 184, 0, 0.5);
+}
+
+.password-strength__fill--strong {
+  width: 100%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+/* Checkbox Binding */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  margin: 4px 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #00f3ff;
+  cursor: pointer;
+}
+
+.checkbox-group span {
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
+
+/* =========================================
+   BUTTON & ACTION BINDINGS
+   ========================================= */
+
+/* Dedicated Login Submit Button */
+.auth-submit-button {
+  width: 100%;
+  background: linear-gradient(135deg, #00f3ff, #00a8ff);
+  color: #050b14;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.auth-submit-button:hover:not(:disabled) {
+  opacity: 0.95;
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.auth-submit-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.auth-submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Shared Button Styles (used in Register component) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00f3ff, #00a8ff);
+  color: #050b14;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.95;
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* =========================================
+   FOOTER & LINK BINDINGS
+   ========================================= */
+
+.auth-links,
+.auth-card__footer {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 16px;
+}
+
+.auth-card__footer p {
+  font-size: 0.85rem;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.auth-links a,
+.auth-card__footer a {
+  color: #00f3ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.auth-links a:hover,
+.auth-card__footer a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+}

@@ -1,0 +1,426 @@
+/* =========================================
+   PRODUCT DETAILS PAGE BASE (Black & Neon)
+   ========================================= */
+
+.product-details-page {
+  padding: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #f3f4f6;
+  box-sizing: border-box;
+}
+
+/* Back Link */
+.product-details-back {
+  display: inline-flex;
+  align-items: center;
+  color: #00f3ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  width: fit-content;
+}
+
+.product-details-back:hover {
+  opacity: 0.8;
+}
+
+/* Main Card Structure */
+.product-details {
+  background: #111827;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Container */
+.product-details__image {
+  width: 100%;
+  height: 240px;
+  background: #0b0f19;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.product-details__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details__placeholder {
+  font-size: 4rem;
+  opacity: 0.7;
+}
+
+/* Content Container */
+.product-details__content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Badges */
+.product-details__badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.product-details__badges span:first-child {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ff007f;
+  background: rgba(255, 0, 127, 0.12);
+  border: 1px solid rgba(255, 0, 127, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.product-details__badges span:last-child {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #9ca3af;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+/* Header & Description */
+.product-details__content h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.product-details__description {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Individual Data Blocks */
+.product-details__price,
+.product-details__cashback,
+.product-details__stock,
+.product-details__balance,
+.product-details__required {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #0b0f19;
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+
+.product-details__price span,
+.product-details__cashback span,
+.product-details__stock span,
+.product-details__balance span,
+.product-details__required span {
+  color: #9ca3af;
+}
+
+.product-details__price strong {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.product-details__cashback strong {
+  font-size: 1rem;
+  color: #10b981;
+}
+
+.product-details__stock strong {
+  color: #ffffff;
+}
+
+.product-details__balance strong {
+  color: #00f3ff;
+}
+
+.product-details__required strong {
+  color: #ff007f;
+}
+
+/* One-time Notice Badge */
+.product-details__notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 243, 255, 0.05);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.product-details__notice span {
+  color: #00f3ff;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.product-details__notice p {
+  font-size: 0.75rem;
+  color: #d1d5db;
+  margin: 0;
+}
+
+/* Comprehensive Financial Summary Box */
+.product-details__summary {
+  background: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.product-details__summary div {
+  display: flex;
+  justify-content: space-between;
+  color: #9ca3af;
+}
+
+.product-details__summary div strong {
+  color: #ffffff;
+}
+
+.product-details__summary .summary-total {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 8px;
+  margin-top: 2px;
+  font-weight: 800;
+}
+
+.product-details__summary .summary-total span {
+  color: #ffffff;
+}
+
+.product-details__summary .summary-total strong {
+  color: #00f3ff;
+  font-size: 1rem;
+}
+
+/* Insufficient Balance Alert */
+.product-details__balance-error {
+  background: rgba(255, 0, 127, 0.1);
+  border: 1px solid rgba(255, 0, 127, 0.3);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #ff007f;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Submit Action Button */
+.product-details__order {
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* =========================================
+   INSUFFICIENT BALANCE MODAL
+   ========================================= */
+
+.product-details__deposit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(5, 11, 20, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.product-details__deposit-modal {
+  background: #111827;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.product-details__deposit-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.product-details__deposit-close:hover {
+  color: #ffffff;
+}
+
+.product-details__deposit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.product-details__deposit-modal h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.product-details__deposit-message {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin: 0 0 16px 0;
+}
+
+/* Modal Calculation Breakdown */
+.product-details__deposit-summary {
+  width: 100%;
+  background: #0b0f19;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+  box-sizing: border-box;
+}
+
+.product-details__deposit-summary div {
+  display: flex;
+  justify-content: space-between;
+  color: #9ca3af;
+}
+
+.product-details__deposit-summary div strong {
+  color: #ffffff;
+}
+
+.product-details__deposit-required {
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 8px;
+  margin-top: 2px;
+}
+
+.product-details__deposit-required span {
+  color: #ff007f !important;
+  font-weight: 700;
+}
+
+.product-details__deposit-required strong {
+  color: #ff007f !important;
+  font-size: 1rem;
+}
+
+.product-details__deposit-help {
+  font-size: 0.8rem;
+  color: #d1d5db;
+  margin: 0 0 20px 0;
+}
+
+.product-details__deposit-help strong {
+  color: #00f3ff;
+}
+
+/* Modal Action Buttons */
+.product-details__deposit-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-secondary {
+  background: #1f2937;
+  color: #d1d5db;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:active {
+  background: #374151;
+}
+
+/* General Loaders & Messages */
+.product-details-loading,
+.product-details-message {
+  background: #111827;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  color: #00f3ff;
+  font-weight: 700;
+  max-width: 500px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-details-message h2 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.product-details-message p {
+  color: #9ca3af;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* Tablet & Desktop Layout */
+@media (min-width: 600px) {
+  .product-details {
+    flex-direction: row;
+  }
+
+  .product-details__image {
+    width: 40%;
+    height: auto;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .product-details__content {
+    width: 60%;
+  }
+}

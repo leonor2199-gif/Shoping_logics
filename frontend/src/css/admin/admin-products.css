@@ -1,0 +1,699 @@
+/* ==========================================================================
+   Admin Products Catalog Styles - Dark Neon/Emerald Theme
+   ========================================================================== */
+
+/* Main Wrapper Layout */
+.admin-products {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Page Setup & Header */
+.admin-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 16px;
+}
+
+.admin-page-heading h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.admin-page-heading p {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  color: #a7f3d0;
+  opacity: 0.8;
+}
+
+/* Action Button */
+.admin-primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #34d399;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.admin-primary-button:hover {
+  background: rgba(16, 185, 129, 0.4);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Toolbar & Filters */
+.admin-products-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Search Bar Component */
+.admin-search {
+  display: flex;
+  align-items: center;
+  background: rgba(6, 78, 59, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 8px;
+  padding: 4px 6px 4px 12px;
+  gap: 8px;
+  flex: 1;
+  max-width: 400px;
+  transition: all 0.2s ease;
+}
+
+.admin-search:focus-within {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.admin-search svg {
+  color: #34d399;
+}
+
+.admin-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.admin-search input::placeholder {
+  color: #a7f3d0;
+  opacity: 0.5;
+}
+
+.admin-search button {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-search button:hover {
+  background: rgba(16, 185, 129, 0.35);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Category Input & Select Filters */
+.admin-products-toolbar input[type="text"],
+.admin-products-toolbar select {
+  background: rgba(6, 78, 59, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #a7f3d0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.admin-products-toolbar input[type="text"]::placeholder {
+  color: #a7f3d0;
+  opacity: 0.5;
+}
+
+.admin-products-toolbar input[type="text"]:focus,
+.admin-products-toolbar select:focus,
+.admin-products-toolbar select:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+}
+
+.admin-products-toolbar select option {
+  background-color: #064e3b;
+  color: #ffffff;
+}
+
+/* Table Container Card */
+.admin-table-card {
+  background: rgba(6, 78, 59, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.admin-table-card__header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-table-card__header strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.admin-table-card__header span {
+  font-size: 0.75rem;
+  color: #a7f3d0;
+  opacity: 0.7;
+}
+
+.admin-table-card__header button {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-table-card__header button:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.25);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
+}
+
+/* Data Table Layout */
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.admin-table th {
+  background: rgba(6, 78, 59, 0.4);
+  color: #a7f3d0;
+  font-weight: 600;
+  padding: 12px 20px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.admin-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+  color: #e2e8f0;
+  vertical-align: middle;
+}
+
+.admin-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* Product Media & Identity Cell */
+.admin-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-product-cell img,
+.admin-product-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.admin-product-cell img {
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.admin-product-placeholder {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px dashed rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.admin-product-cell strong {
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.admin-product-cell span {
+  display: block;
+  font-size: 0.75rem;
+  color: #a7f3d0;
+  opacity: 0.7;
+}
+
+/* Product Status Badges */
+.admin-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.admin-status--active {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.admin-status--inactive {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+/* Row Action Buttons */
+.admin-product-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-product-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 6px;
+  color: #34d399;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-product-actions button:hover {
+  background: rgba(16, 185, 129, 0.25);
+  color: #ffffff;
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Empty & Loading States */
+.admin-table-loading,
+.admin-table-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  padding: 3rem 1.5rem;
+  color: #a7f3d0;
+  text-align: center;
+}
+
+.admin-table-empty h3 {
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.125rem;
+}
+
+.admin-table-empty p {
+  margin: 0;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* Pagination Section */
+.admin-pagination {
+  padding: 14px 20px;
+  border-top: 1px solid rgba(16, 185, 129, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #a7f3d0;
+}
+
+.admin-pagination button {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.admin-pagination button:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.25);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
+}
+
+.admin-pagination button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Modals Core Styles */
+.admin-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.admin-modal {
+  background: #042f2e;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+  overflow: hidden;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.admin-product-modal,
+.admin-product-view-modal {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.admin-modal__header {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.admin-modal__header h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.admin-modal__header p {
+  margin: 4px 0 0 0;
+  font-size: 0.8125rem;
+  color: #a7f3d0;
+  opacity: 0.7;
+}
+
+.admin-modal__header button {
+  background: transparent;
+  border: none;
+  color: #a7f3d0;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-modal__header button:hover {
+  color: #ffffff;
+}
+
+/* Modal Form Layout */
+.admin-modal form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-form-group label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #a7f3d0;
+}
+
+.admin-form-group input,
+.admin-form-group textarea {
+  background: rgba(6, 78, 59, 0.4);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.admin-form-group textarea {
+  resize: vertical;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus {
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+}
+
+.admin-form-group small {
+  font-size: 0.75rem;
+  color: #a7f3d0;
+  opacity: 0.6;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* Custom Checkbox */
+.admin-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.admin-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #10b981;
+  cursor: pointer;
+}
+
+.admin-checkbox span {
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+/* Product View Details Modal Specifics */
+.admin-product-preview {
+  padding: 20px 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-product-preview img {
+  max-height: 200px;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.admin-user-details-grid {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.admin-user-details-grid div {
+  background: rgba(6, 78, 59, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.admin-user-details-grid span {
+  display: block;
+  font-size: 0.75rem;
+  color: #a7f3d0;
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+
+.admin-user-details-grid strong {
+  display: block;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.admin-product-description {
+  padding: 0 24px 16px;
+}
+
+.admin-product-description h3 {
+  margin: 0 0 6px 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-product-description p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #e2e8f0;
+  line-height: 1.5;
+  background: rgba(6, 78, 59, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Modal Bottom Actions */
+.admin-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 0 24px 24px;
+}
+
+.admin-modal form .admin-modal__actions {
+  padding: 0;
+}
+
+.admin-modal__actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #a7f3d0;
+  transition: all 0.2s ease;
+}
+
+.admin-modal__actions button:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.15);
+  color: #ffffff;
+}
+
+.admin-modal__actions button.admin-modal-primary {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #34d399;
+}
+
+.admin-modal__actions button.admin-modal-primary:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.4);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .admin-products-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .admin-search {
+    max-width: 100%;
+  }
+
+  .admin-page-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-primary-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-modal__actions {
+    flex-direction: column;
+  }
+
+  .admin-modal__actions button {
+    width: 100%;
+  }
+}
