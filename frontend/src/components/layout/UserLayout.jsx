@@ -1,237 +1,351 @@
-import { useState } from "react";
 import {
   NavLink,
   Outlet,
   useNavigate,
 } from "react-router-dom";
 
-import BalanceDisplay from "../common/BalanceDisplay";
 
 function UserLayout() {
+
+
   const navigate = useNavigate();
 
-  const [mobileMenuOpen, setMobileMenuOpen] =
-    useState(false);
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
 
   const handleLogout = () => {
-    console.log("CIERRE DE SESIÓN DE USUARIO");
 
-    // Only remove USER authentication
+
     localStorage.removeItem("userToken");
+
     localStorage.removeItem("user");
 
-    console.log(
-      "Token de usuario después de cerrar sesión:",
-      localStorage.getItem("userToken")
-    );
-
-    console.log(
-      "Sesión de administrador aún existe:",
-      Boolean(
-        localStorage.getItem("adminToken")
-      )
-    );
-
-    setMobileMenuOpen(false);
 
     navigate("/login", {
-      replace: true,
+
+      replace:true,
+
     });
+
+
   };
 
+
+
   return (
+
+
     <div className="user-layout">
 
+
+
       {/* =========================
-          HEADER
-      ========================= */}
+          TOP LOGO BANNER
+      ========================== */}
 
-      <header className="site-header">
 
-        <div className="site-header__container">
+      <header className="logo-banner">
 
-          {/* Logo */}
 
-          <NavLink
-            to="/home"
-            className="site-header__logo"
-            onClick={closeMobileMenu}
-          >
-            <span className="site-header__logo-icon">
-              <img src="https://play-lh.googleusercontent.com/iVaeA0HDw8CZjEM-K7GdLB9XYmpcwVFSuv4Q8o9uh4Br7PuKCm3QSYCVU73tr9BBXdR_7xTX4yO0azOJegRVcA" alt="mercado" />
-            </span>
+        <img
 
-            <span className="site-header__logo-text">
-              Mercado Libre
-            </span>
-          </NavLink>
+          src="/icons/logo.png"
 
-          {/* =========================
-              DESKTOP NAVIGATION
-          ========================= */}
+          alt="Logo"
 
-          <nav className="desktop-nav">
+          className="banner-logo"
 
-            <NavLink
-              to="/home"
-              className={({ isActive }) =>
-                `nav-link ${
-                  isActive ? "active" : ""
-                }`
-              }
-            >
-              Inicio
-            </NavLink>
+        />
 
-            <NavLink
-              to="/products"
-              className={({ isActive }) =>
-                `nav-link ${
-                  isActive ? "active" : ""
-                }`
-              }
-            >
-              Productos
-            </NavLink>
 
-            <NavLink
-              to="/orders"
-              className={({ isActive }) =>
-                `nav-link ${
-                  isActive ? "active" : ""
-                }`
-              }
-            >
-              Pedidos
-            </NavLink>
 
-            <NavLink
-              to="/profile"
-              className={({ isActive }) =>
-                `nav-link ${
-                  isActive ? "active" : ""
-                }`
-              }
-            >
-              Perfil
-            </NavLink>
+        <span className="banner-title">
 
-          </nav>
+          Mexico
 
-          {/* =========================
-              RIGHT SIDE
-          ========================= */}
+        </span>
 
-          <div className="site-header__right">
 
-            <button
-              type="button"
-              className="header-logout"
-              onClick={handleLogout}
-            >
-              Cerrar sesión
-            </button>
-
-            <button
-              type="button"
-              className="mobile-menu-button"
-              onClick={() =>
-                setMobileMenuOpen(
-                  (previous) => !previous
-                )
-              }
-              aria-label="Alternar navegación"
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? "✕" : "☰"}
-            </button>
-
-          </div>
-
-        </div>
-
-        {/* =========================
-            MOBILE NAVIGATION
-        ========================= */}
-
-        {mobileMenuOpen && (
-          <nav className="mobile-nav">
-
-            <NavLink
-              to="/home"
-              className={({ isActive }) =>
-                `nav-link ${
-                  isActive ? "active" : ""
-                }`
-              }
-              onClick={closeMobileMenu}
-            >
-              Inicio
-            </NavLink>
-
-            <NavLink
-              to="/products"
-              className={({ isActive }) =>
-                `nav-link ${
-                  isActive ? "active" : ""
-                }`
-              }
-              onClick={closeMobileMenu}
-            >
-              Productos
-            </NavLink>
-
-            <NavLink
-              to="/orders"
-              className={({ isActive }) =>
-                `nav-link ${
-                  isActive ? "active" : ""
-                }`
-              }
-              onClick={closeMobileMenu}
-            >
-              Pedidos
-            </NavLink>
-
-            <NavLink
-              to="/profile"
-              className={({ isActive }) =>
-                `nav-link ${
-                  isActive ? "active" : ""
-                }`
-              }
-              onClick={closeMobileMenu}
-            >
-              Perfil
-            </NavLink>
-
-            <button
-              type="button"
-              className="mobile-nav__logout"
-              onClick={handleLogout}
-            >
-              Cerrar sesión
-            </button>
-
-          </nav>
-        )}
 
       </header>
 
+
+
+
+
       {/* =========================
-          MAIN CONTENT
-      ========================= */}
+          PAGE CONTENT
+      ========================== */}
+
 
       <main className="site-main">
+
+
         <Outlet />
+
+
       </main>
 
+
+
+
+
+      {/* =========================
+          FIXED BOTTOM NAVIGATION
+      ========================== */}
+
+
+      <nav className="bottom-nav">
+
+
+
+
+
+        {/* HOME */}
+
+
+        <NavLink
+
+
+          to="/home"
+
+
+          className={({isActive}) =>
+
+            `bottom-nav-item ${isActive ? "active" : ""}`
+
+          }
+
+
+        >
+
+
+          <span className="bottom-icon">
+
+
+            <img
+
+              src="/icons/home.png"
+
+              alt="Home"
+
+            />
+
+
+          </span>
+
+
+
+          <span>
+
+            Home
+
+          </span>
+
+
+
+        </NavLink>
+
+        {/* ORDERS */}
+
+        <NavLink
+
+
+          to="/orders"
+
+
+          className={({isActive}) =>
+
+            `bottom-nav-item ${isActive ? "active" : ""}`
+
+          }
+
+
+        >
+
+
+          <span className="bottom-icon">
+
+
+            <img
+
+              src="/icons/orders.png"
+
+              alt="Orders"
+
+            />
+
+
+          </span>
+
+
+
+          <span>
+
+            Orders
+
+          </span>
+
+
+
+        </NavLink>
+
+
+
+        {/* PRODUCTS */}
+        <NavLink
+
+
+          to="/products"
+
+
+          className={({isActive}) =>
+
+            `bottom-nav-item ${isActive ? "active" : ""}`
+
+          }
+
+
+        >
+
+
+          <span className="bottom-icon">
+
+
+            <img
+
+              src="/icons/products.png"
+
+              alt="Products"
+
+            />
+
+
+          </span>
+
+
+
+          <span>
+
+            Products
+
+          </span>
+
+
+
+        </NavLink>
+
+
+
+
+        {/* PROFILE */}
+
+
+
+        <NavLink
+
+
+          to="/profile"
+
+
+          className={({isActive}) =>
+
+            `bottom-nav-item ${isActive ? "active" : ""}`
+
+          }
+
+
+        >
+
+
+          <span className="bottom-icon">
+
+
+            <img
+
+              src="/icons/profile.png"
+
+              alt="Profile"
+
+            />
+
+
+          </span>
+
+
+
+          <span>
+
+            Profile
+
+          </span>
+
+
+
+        </NavLink>
+
+
+
+
+
+
+
+
+        {/* LOGOUT */}
+
+
+
+        <button
+
+
+          className="logout-bottom"
+
+
+          onClick={handleLogout}
+
+
+        >
+
+
+          <span className="bottom-icon">
+
+
+            <img
+
+              src="/icons/logout.png"
+
+              alt="Logout"
+
+            />
+
+
+          </span>
+
+
+
+          <span>
+
+            Logout
+
+          </span>
+
+
+
+        </button>
+
+
+
+
+      </nav>
+
+
+
     </div>
+
+
   );
+
 }
+
+
 
 export default UserLayout;
